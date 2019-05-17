@@ -11,7 +11,7 @@ module Mutations
       if user.save
         {
           user: user,
-          errors: [],
+          errors: []
         }
       else
         # Failed save, return the errors to the client
