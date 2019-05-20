@@ -1,24 +1,71 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ ```
+  rails new blogposts_graphql_api --skip-test --api
+```
 
-Things you may want to cover:
+```
+> rails g model User email:string name:string
+> rails g model Blogpost user:belongs_to title:string body:text
+```
 
-* Ruby version
+- add dependencies
 
-* System dependencies
+- install them
+```
+  rails generate graphql:install
+  bundle
+  rails generate graphql:object user
+  rails generate graphql:object blogpost
+```
 
-* Configuration
 
-* Database creation
+- add faker gem
+- bundle
+- add seeds
+- rails db:seed
 
-* Database initialization
 
-* How to run the test suite
+### Query
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+  query {
+    users {
+      name
+      id
+      blogpostsCount
+      blogposts {
+        id
+        title
+        bodyShort
+        body
+      }
+    }
+  }
+```
 
-* Deployment instructions
+```
+  mutation {
+    createUser(input: {
+      name: "Florin Ionce",
+      email: "florin@wolfpack-digital.com"
+    }) {
+      user {
+        id
+        name
+        email
+      }
+      errors
+    }
+  }
+```
 
-* ...
+- add unique validation on user email
+```
+  rails g migration add_unique_index_to_user_email
+```
+
+
+- how do we handle n+1 queries?
+
+- https://github.com/salsify/goldiloader
