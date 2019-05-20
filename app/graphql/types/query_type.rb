@@ -10,6 +10,10 @@ module Types
       argument :id, ID, required: true
     end
 
+    field :comment, Types::CommentType, null: false do
+      argument :id, ID, required: true
+    end
+
     def users
       User.all
     end
@@ -20,6 +24,10 @@ module Types
 
     def blogpost(id:)
       Blogpost.find(id)
+    end
+
+    def comment(id:)
+      Comment.find(id)
     end
   end
 end

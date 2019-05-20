@@ -6,6 +6,7 @@ module Types
     field :body_short, String, null: true
     field :user_id, ID, null: false
     field :user, Types::UserType, null: true
+    field :comments, [Types::CommentType], null: true
 
     def body_short
       object.body&.truncate(20)
