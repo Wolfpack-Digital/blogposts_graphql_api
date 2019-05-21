@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "test@test1.com",
+      "name": "test 1",
+      "blogposts": []
+    },
+    {
+      "id": 2,
+      "email": "test@test2.com",
+      "name": "test 2",
+      "blogposts": []
+    }
+  ],
+  "blogposts": [
+    {
+      "id": 1,
+      "bodyShort": "Wow",
+      "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+      "comments": [],
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "bodyShort": "this is a short description 2",
+      "body": "This is a muuuuuuuuuuch longer description 2",
+      "comments": [],
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "bodyShort": "this is a short description 3",
+      "body": "This is a muuuuuuuuuuch longer description 3",
+      "comments": [],
+      "userId": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "this is the first comment",
+      "userId": 1,
+      "blogpostId": 1
+    },
+    {
+      "id": 2,
+      "body": "this is the second comment",
+      "userId": 1,
+      "blogpostId": 1
+    },
+    {
+      "id": 3
+    }
+  ]
+}
